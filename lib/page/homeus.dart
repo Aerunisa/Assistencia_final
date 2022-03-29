@@ -1,5 +1,5 @@
-import 'package:ass/module.dart/reportmod.dart';
 import 'package:ass/page/details.dart';
+import 'package:ass/page/wfo.dart';
 import 'package:ass/widget/report.dart';
 import 'package:ass/widget/navbar.dart';
 import 'package:flutter/material.dart';
@@ -257,7 +257,7 @@ class HomePageUs extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const HomePageUs(),
+                                    builder: (context) => AbsenOffice(),
                                   ),
                                 );
                               },
@@ -312,15 +312,13 @@ class HomePageUs extends StatelessWidget {
                   Column(
                     children: [
                       GestureDetector(
-                        child: ReportCard(
-                          Report(
-                            id: 1,
-                            nameWorker: 'Fitriani',
-                            imageUrl: 'asset/image/test.jpg',
-                            timeS: '09:10',
-                            dateT: 'monday, 1 jan 2022',
-                            location: 'in the Office',
-                          ),
+                        child: const ReportCard(
+                          id: 1,
+                          nameWorker: 'Fitriani',
+                          imageUrl: 'asset/image/test.jpg',
+                          timeS: '09:10',
+                          dateT: 'monday, 1 jan 2022',
+                          location: 'in the Office',
                         ),
                         onTap: () {
                           Navigator.push(
@@ -334,28 +332,24 @@ class HomePageUs extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      ReportCard(
-                        Report(
-                          id: 1,
-                          nameWorker: 'Fitriani',
-                          imageUrl: 'asset/image/test.jpg',
-                          timeS: '09:10',
-                          dateT: 'monday, 1 jan 2022',
-                          location: 'in the Office',
-                        ),
+                      const ReportCard(
+                        id: 1,
+                        nameWorker: 'Fitriani',
+                        imageUrl: 'asset/image/test.jpg',
+                        timeS: '09:10',
+                        dateT: 'monday, 1 jan 2022',
+                        location: 'in the Office',
                       ),
                       const SizedBox(
                         height: 10,
                       ),
-                      ReportCard(
-                        Report(
-                          id: 1,
-                          nameWorker: 'Fitriani',
-                          imageUrl: 'asset/image/test.jpg',
-                          timeS: '09:10',
-                          dateT: 'monday, 1 jan 2022',
-                          location: 'in the Office',
-                        ),
+                      const ReportCard(
+                        id: 1,
+                        nameWorker: 'Fitriani',
+                        imageUrl: 'asset/image/test.jpg',
+                        timeS: '09:10',
+                        dateT: 'monday, 1 jan 2022',
+                        location: 'in the Office',
                       ),
                     ],
                   ),

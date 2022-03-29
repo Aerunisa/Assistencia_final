@@ -1,11 +1,23 @@
-import 'package:ass/module.dart/reportmod.dart';
 import 'package:ass/widget/theme.dart';
 import 'package:flutter/material.dart';
 
 class ReportCard extends StatelessWidget {
-  final Report report;
+  final int id;
+  final String nameWorker;
+  final String imageUrl;
+  final String dateT;
+  final String timeS;
+  final String location;
 
-  const ReportCard(this.report, {Key? key}) : super(key: key);
+  const ReportCard({
+    Key? key,
+    required this.id,
+    required this.nameWorker,
+    required this.imageUrl,
+    required this.dateT,
+    required this.timeS,
+    required this.location,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +33,7 @@ class ReportCard extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(
-                  report.imageUrl,
+                  imageUrl,
                   //'asset/image/test.jpg',
                 ),
                 Align(
@@ -47,7 +59,7 @@ class ReportCard extends StatelessWidget {
                             height: 12,
                           ),
                           Text(
-                            report.timeS,
+                            timeS,
                             style: iiSPro.copyWith(
                               fontSize: 12,
                             ),
@@ -67,7 +79,7 @@ class ReportCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              report.nameWorker,
+              nameWorker,
               style: boldSSPro.copyWith(fontSize: 18),
             ),
             const SizedBox(
@@ -75,7 +87,7 @@ class ReportCard extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                text: report.dateT,
+                text: dateT,
                 style: iiSPro.copyWith(fontSize: 16, color: merahmuda),
               ),
             ),
@@ -83,7 +95,7 @@ class ReportCard extends StatelessWidget {
               height: 8,
             ),
             Text(
-              report.location,
+              location,
               style: iiSPro.copyWith(fontSize: 16, color: pinktua),
             )
           ],

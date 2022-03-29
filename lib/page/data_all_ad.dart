@@ -1,7 +1,8 @@
-import 'package:ass/page/data_emp_ad.dart';
+import 'package:ass/module.dart/departmod.dart';
 import 'package:ass/page/data_report_ad.dart';
 import 'package:ass/page/details.dart';
 import 'package:ass/page/homeadmin.dart';
+import 'package:ass/widget/departcard.dart';
 import 'package:ass/widget/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:ass/widget/theme.dart';
@@ -11,30 +12,6 @@ class DataUnp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tahunButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(10),
-      color: maroonColor,
-      child: MaterialButton(
-        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery.of(context).size.width,
-        height: 40,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const PhotoDetail(),
-            ),
-          );
-        },
-        child: Text(
-          'tahun',
-          style: TextStyle(
-              color: whiteColor, fontWeight: FontWeight.bold, fontSize: 15),
-        ),
-      ),
-    );
-
     return Scaffold(
       backgroundColor: pinkputih,
       appBar: AppBar(
@@ -67,8 +44,8 @@ class DataUnp extends StatelessWidget {
             child: Column(
               children: [
                 ExpansionTile(
-                  title: Text('Menu'),
-                  leading: Icon(Icons.info),
+                  title: const Text('Menu'),
+                  leading: const Icon(Icons.info),
                   children: [
                     InkWell(
                       onTap: () {
@@ -118,190 +95,26 @@ class DataUnp extends StatelessWidget {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 20, top: 10, right: 20),
-                          width: 360,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border(
-                              top: BorderSide(width: 3.0, color: memerahtua),
-                              left: BorderSide(width: 3.0, color: memerahtua),
-                              right: BorderSide(width: 3.0, color: memerahtua),
-                              bottom: BorderSide(width: 3.0, color: memerahtua),
-                            ),
-                            color: putih,
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Department',
-                                    style: boldSSPro.copyWith(
-                                        color: memerahtua, fontSize: 18),
-                                  ),
-                                  const SizedBox(
-                                    width: 175,
-                                  ),
-                                  InkWell(
-                                    child: Icon(
-                                        Icons.arrow_forward_ios_outlined,
-                                        size: 30,
-                                        color: memerahtua),
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => const DataEmp(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              tahunButton,
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              tahunButton,
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              tahunButton,
-                            ],
-                          ),
+                        DepartCard(
+                          Depacard(
+                              namadepartment: 'Departmen A',
+                              tahundepartment: '2020'),
                         ),
                         const SizedBox(
                           height: 8,
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 20, top: 10, right: 20),
-                          width: 360,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border(
-                              top: BorderSide(width: 3.0, color: memerahtua),
-                              left: BorderSide(width: 3.0, color: memerahtua),
-                              right: BorderSide(width: 3.0, color: memerahtua),
-                              bottom: BorderSide(width: 3.0, color: memerahtua),
-                            ),
-                            color: putih,
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Department',
-                                    style: boldSSPro.copyWith(
-                                        color: memerahtua, fontSize: 18),
-                                  ),
-                                  const SizedBox(
-                                    width: 175,
-                                  ),
-                                  InkWell(
-                                    child: Icon(
-                                        Icons.arrow_forward_ios_outlined,
-                                        size: 30,
-                                        color: memerahtua),
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const PhotoDetail(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              tahunButton,
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              tahunButton,
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              tahunButton,
-                            ],
-                          ),
+                        DepartCard(
+                          Depacard(
+                              namadepartment: 'Departmen A',
+                              tahundepartment: '2020'),
                         ),
                         const SizedBox(
                           height: 8,
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 20, top: 10, right: 20),
-                          width: 360,
-                          height: 230,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border(
-                              top: BorderSide(width: 3.0, color: memerahtua),
-                              left: BorderSide(width: 3.0, color: memerahtua),
-                              right: BorderSide(width: 3.0, color: memerahtua),
-                              bottom: BorderSide(width: 3.0, color: memerahtua),
-                            ),
-                            color: putih,
-                          ),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Department',
-                                    style: boldSSPro.copyWith(
-                                        color: memerahtua, fontSize: 18),
-                                  ),
-                                  const SizedBox(
-                                    width: 175,
-                                  ),
-                                  InkWell(
-                                    child: Icon(
-                                        Icons.arrow_forward_ios_outlined,
-                                        size: 30,
-                                        color: memerahtua),
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const PhotoDetail(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 8,
-                              ),
-                              tahunButton,
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              tahunButton,
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              tahunButton,
-                            ],
-                          ),
+                        DepartCard(
+                          Depacard(
+                              namadepartment: 'Departmen A',
+                              tahundepartment: '2020'),
                         ),
                       ],
                     ),
